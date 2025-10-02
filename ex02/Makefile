@@ -1,7 +1,7 @@
 
 NAME =		brain
 CXX =		c++
-CXXFLAG =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRCS =		main.cpp
 
@@ -12,10 +12,10 @@ RM =		rm -rf
 all: $(NAME)
 
 $(NAME):$(OBJS)
-	$(CXX) $(CXXFLAG) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAG) $(INCLUDES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
