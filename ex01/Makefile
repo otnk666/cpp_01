@@ -1,7 +1,7 @@
 
 NAME =		zombie
 CXX =		c++
-CXXFLAG =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 SRCS_DIR =	./srcs
 INC_DIR	=	./includes
 
@@ -16,10 +16,10 @@ RM =		rm -rf
 all: $(NAME)
 
 $(NAME):$(OBJS)
-	$(CXX) $(CXXFLAG) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAG) $(INCLUDES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)
