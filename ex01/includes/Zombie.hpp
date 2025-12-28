@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <cctype>
@@ -12,7 +13,9 @@ public:
     Zombie();
     ~Zombie();
     void announce(void);
-    void set_name(std::string name);
+    void set_name(const std::string& name);
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie* zombieHorde(int N, const std::string& name);
+
+#endif
