@@ -14,4 +14,5 @@ int main(void)
     std::cout << s << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
+    return (0);
 }
