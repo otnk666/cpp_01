@@ -1,6 +1,8 @@
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
 
 class Harl
 {
@@ -11,5 +13,7 @@ class Harl
         void error(void);
     
     public:
-        void complain(std::string level);
+        void complain(const std::string& level);
 };
+
+#endif

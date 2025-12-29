@@ -2,12 +2,13 @@
 NAME = Harl2.0
 CXX	= c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS += -std=c++98 -pedantic
 SRCS_DIR =	./srcs
 INC_DIR	=	./includes
 
 SRCS =		$(SRCS_DIR)/main.cpp \
-			$(SRCS_DIR)/harl.cpp
+			$(SRCS_DIR)/Harl.cpp
 
 OBJS =		$(SRCS:.cpp=.o)
 INCLUDES =	-I $(INC_DIR)
