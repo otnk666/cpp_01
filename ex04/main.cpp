@@ -1,9 +1,9 @@
 
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
 
-bool    readFile(std::string& filename, std::string& content)
+bool    readFile(const std::string& filename,  std::string& content)
 {
     std::ifstream inFile(filename.c_str());
     if (!inFile)
@@ -11,8 +11,8 @@ bool    readFile(std::string& filename, std::string& content)
         std::cerr << "Error: open a file" << std::endl;
         return false;
     }
-
     std::string line;
+
     while(std::getline(inFile ,line))
     {
         content += line;
@@ -49,12 +49,10 @@ bool writeFile(const std::string& filename, const std::string& content)
     std::ofstream outFile(outfilename.c_str());
     if (!outFile)
     {
-        std::cout << "Error : create file" << std::endl;
+        std::cerr << "Error: create file" << std::endl;
         return (false);
     }
-
     outFile << content;
-    std::cout << content << std::endl;
     outFile.close();
     return (true);
 }
@@ -72,11 +70,15 @@ int main (int argc, char **argv)
     std::string s1 = argv[2];
     std::string s2 = argv[3];
 
+    if (s1.empty())
+    {
+        std::cerr << "Error: s1 cannot be empty" << std::endl;
+        return (1);
+    }
+
     std::string content = "";
     if (!readFile(filename, content))
         return (1);
-
-    std::cout << content << std::endl;
 
     std::string result = replace(content, s1, s2);
 
