@@ -1,4 +1,4 @@
-#include "harlFilter.hpp"
+#include "Harl.hpp"
 
 void Harl::debug(void)
 {
@@ -18,7 +18,7 @@ void Harl::info(void)
 
 void Harl::warning(void)
 {
-    std::cout << "[Warning]" << std::endl;
+    std::cout << "[WARNING]" << std::endl;
     std::cout <<" think I deserve to have some extra bacon for free." 
     "I've been coming for years, whereas you started working here just last month."<< std::endl;
     std::cout << "\n";
@@ -31,7 +31,7 @@ void Harl::error(void)
     std::cout << "\n";
 }
 
-void Harl::harlFilter(std::string level)
+void Harl::harlFilter(const std::string& level)
 {
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
@@ -40,7 +40,7 @@ void Harl::harlFilter(std::string level)
         &Harl::debug,
         &Harl::info,
         &Harl::warning,
-        &Harl::error,
+        &Harl::error
     };
 
     int levelIndex = -1;
@@ -65,7 +65,7 @@ void Harl::harlFilter(std::string level)
             (this->*func[3])();
             break;
         default:
-            std::cout << "I am not sure how tired I am today..." << std::endl;
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break;
     }
 }

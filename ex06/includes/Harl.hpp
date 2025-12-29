@@ -1,7 +1,8 @@
-#pragma once
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
 
 class Harl
 {
@@ -12,5 +13,7 @@ class Harl
         void error(void);
     
     public:
-        void harlFilter(std::string level);
+        void harlFilter(const std::string& level);
 };
+
+#endif
