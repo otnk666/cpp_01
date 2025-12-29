@@ -12,4 +12,5 @@ int main (void)
 
     john.setWeapon(gun);
     john.attack();
+    return (0);
 }

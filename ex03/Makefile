@@ -1,8 +1,8 @@
 
 NAME = violence
 CXX	= c++
-
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS += -std=c++98 -pedantic
 SRCS_DIR =	./srcs
 INC_DIR	=	./includes
 

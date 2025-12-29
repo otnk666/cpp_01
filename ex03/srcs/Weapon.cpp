@@ -5,7 +5,7 @@ Weapon::~Weapon()
     std::cout << "Destructor called: weapon" << std::endl;
 }
 
-void Weapon::setType(std::string type)
+void Weapon::setType(const std::string& type)
 {
     this->_type = type;
 }

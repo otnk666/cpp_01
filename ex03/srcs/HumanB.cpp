@@ -3,7 +3,7 @@
 void HumanB::attack()
 {
     if (this->_weapon)
-        std::cout << this->_name << " atacks with their " << this->_weapon->getType() << std::endl;
+        std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
     else
         std::cout << this->_name << " no weapon" << std::endl;
 }
